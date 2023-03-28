@@ -1,2 +1,6 @@
-# POSTTEST_PEMO_064_Krisdayanti
-2009106064_Krisdayanti
+# POSTTEST PEMROGRAMAN MOBILE
+
+## Tema  : K-Pop Merchandise Shop
+### Nama  : Krisdayanti
+### NIM   : 2009106064
+### Kelas : Pemrograman Mobile A1
