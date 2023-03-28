@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'store_page.dart';
+import 'girlband.dart';
+import 'boyband.dart';
+import 'soloist.dart';
+import 'about.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -62,7 +65,9 @@ class _HomePageState extends State<HomePage> {
               ListTile(
                 leading: const Icon(Icons.info),
                 title: const Text('About'),
-                onTap: () {},
+                onTap: () {
+                  Navigator.pushNamed(context, '/aboutPage');
+                },
               ),
               ListTile(
                 leading: const Icon(Icons.help),
@@ -104,155 +109,21 @@ class _HomePageState extends State<HomePage> {
           width: widthScreen,
           child: GridView.count(
             crossAxisCount: 2,
-            childAspectRatio: 4 / 3,
+            childAspectRatio: 4 / 3.2,
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
             children: [
+              //aespa
               Container(
-                height: 170,
-                width: 230,
-                margin: EdgeInsets.only(left: 10, top: 20, right: 10),
+                margin: EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  image: const DecorationImage(
-                    image: AssetImage("assets/aespa.jpg"),
-                    fit: BoxFit.fitHeight,
-                  ),
+                  color: Colors.pink.shade50,
                   border: Border.all(
-                    color: Colors.black,
-                    width: 5,
+                    color: Colors.pink.shade200,
+                    width: 2,
                   ),
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(5),
                 ),
-              ),
-              Container(
-                height: 170,
-                width: 230,
-                margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  image: const DecorationImage(
-                    image: AssetImage("assets/bts.jpg"),
-                    fit: BoxFit.fitHeight,
-                  ),
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 5,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-              ),
-              Container(
-                height: 170,
-                width: 230,
-                margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-                decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.black,
-                    width: 5,
-                  ),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Material(
-                  color: Colors.white,
-                  elevation: 5, //memberi efek bayangan
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: InkWell(
-                    splashColor: Colors.white60,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/landingPage');
-                    },
-                    child: Column(
-                      children: [
-                        Ink.image(
-                          image: AssetImage('assets/enhypen.jpg'),
-                          height: 160,
-                          width: 220,
-                          fit: BoxFit.cover,
-                        ),
-                        Text(
-                          'BTS',
-                          style: TextStyle(
-                            fontSize: 20,
-                            letterSpacing: 3,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Container(
-                height: 170,
-                width: 230,
-                margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-                child: Material(
-                  color: Colors.white,
-                  elevation: 5, //memberi efek bayangan
-                  borderRadius: BorderRadius.circular(15),
-                  clipBehavior: Clip.antiAliasWithSaveLayer,
-                  child: InkWell(
-                    splashColor: Colors.white60,
-                    onTap: () {
-                      Navigator.pushNamed(context, '/landingPage');
-                    },
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Ink.image(
-                          image: AssetImage('assets/enhypen.jpg'),
-                          height: 160,
-                          width: 220,
-                          fit: BoxFit.cover,
-                        ),
-                        Text(
-                          'BTS',
-                          style: TextStyle(
-                            fontSize: 20,
-                            letterSpacing: 3,
-                            color: Colors.black,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Material(
-                color: Colors.white,
-                elevation: 5, //memberi efek bayangan
-                borderRadius: BorderRadius.circular(15),
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-
-                child: InkWell(
-                  splashColor: Colors.white60,
-                  onTap: () {
-                    Navigator.pushNamed(context, '/landingPage');
-                  },
-                  child: Column(
-                    //mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Ink.image(
-                        image: AssetImage('assets/bts.jpg'),
-                        height: 170,
-                        width: 230,
-                        fit: BoxFit.cover,
-                      ),
-                      SizedBox(height: 6),
-                      Text(
-                        'BTS',
-                        style: TextStyle(
-                          fontSize: 20,
-                          letterSpacing: 3,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Container(
                 child: InkWell(
                   onTap: () {
                     Navigator.push(
@@ -260,406 +131,292 @@ class _HomePageState extends State<HomePage> {
                       PageRouteBuilder(
                         transitionDuration: const Duration(seconds: 2),
                         pageBuilder: (context, animation, secondaryAnimation) =>
-                            StorePage(),
+                            AespaPage(),
                       ),
                     );
                   },
-                  child: Hero(
-                    tag: "BTS",
-                    child: Image.asset(
-                      'assets/bts.jpg',
-                      width: 170,
-                      height: 230,
-                    ),
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "aespa",
+                        child: Image.asset(
+                          'assets/aespa.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "aespa",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //blackpink
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.pink.shade50,
+                  border: Border.all(
+                    color: Colors.pink.shade200,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(seconds: 2),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            BlackpinkPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "blackpink",
+                        child: Image.asset(
+                          'assets/blackpink.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "BLACKPINK",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //bts
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.pink.shade50,
+                  border: Border.all(
+                    color: Colors.pink.shade200,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(seconds: 2),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            BangtanPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "BTS",
+                        child: Image.asset(
+                          'assets/bts.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "BTS",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //enhypen
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.pink.shade50,
+                  border: Border.all(
+                    color: Colors.pink.shade200,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(seconds: 2),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            EnhypenPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "enhypen",
+                        child: Image.asset(
+                          'assets/enhypen.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "ENHYPEN",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //iu
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.pink.shade50,
+                  border: Border.all(
+                    color: Colors.pink.shade200,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(seconds: 2),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            IUPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "iu",
+                        child: Image.asset(
+                          'assets/iu.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "IU",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //red velvet
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.pink.shade50,
+                  border: Border.all(
+                    color: Colors.pink.shade200,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(seconds: 2),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            RedVelvetPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "red velvet",
+                        child: Image.asset(
+                          'assets/red-velvet.png',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "Red Velvet",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              //somi
+              Container(
+                margin: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.pink.shade50,
+                  border: Border.all(
+                    color: Colors.pink.shade200,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.circular(5),
+                ),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      PageRouteBuilder(
+                        transitionDuration: const Duration(seconds: 2),
+                        pageBuilder: (context, animation, secondaryAnimation) =>
+                            SomiPage(),
+                      ),
+                    );
+                  },
+                  child: Column(
+                    children: [
+                      Hero(
+                        tag: "somi",
+                        child: Image.asset(
+                          'assets/somi.jpg',
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      const Text(
+                        "SOMI",
+                        style: TextStyle(
+                          fontSize: 20,
+                          letterSpacing: 2,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ],
           ),
         ),
-        // body: Center(
-        //   child: ListView(
-        //     children: [
-        //       //Bar menu
-
-        //       //Content
-        //       new Row(
-        //         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        //         children: <Widget>[
-        //           //Column 1
-        //           new Column(
-        //             mainAxisAlignment: MainAxisAlignment.center,
-        //             children: <Widget>[
-        //               //aespa
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/aespa.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "aespa",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               //bts
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/bts.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "BTS",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               //nct 127
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/nct-127.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "NCT 127",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               //red velvet
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/red-velvet.png"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "Red Velvet",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               SizedBox(
-        //                 height: 50,
-        //               ),
-        //             ],
-        //           ),
-        //           //Column 2
-        //           new Column(
-        //             mainAxisAlignment: MainAxisAlignment.center,
-        //             children: <Widget>[
-        //               //blackpink
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/blackpink.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "BLACKPINK",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               //enhypen
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/enhypen.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "ENHYPEN",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               //nct dream
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/nct-dream.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "NCT Dream",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               //txt
-        //               const SizedBox(
-        //                 height: 20,
-        //               ),
-        //               new Container(
-        //                 decoration: BoxDecoration(
-        //                   color: Colors.white,
-        //                   image: const DecorationImage(
-        //                     image: AssetImage("assets/txt.jpg"),
-        //                     fit: BoxFit.fitHeight,
-        //                   ),
-        //                   border: Border.all(
-        //                     color: Colors.black,
-        //                     width: 5,
-        //                   ),
-        //                   borderRadius: BorderRadius.circular(15),
-        //                 ),
-        //                 height: 170,
-        //                 width: 230,
-        //                 margin: EdgeInsets.only(left: 10, top: 20, right: 10),
-        //               ),
-        //               new Container(
-        //                 child: ElevatedButton(
-        //                   onPressed: () {},
-        //                   style: ElevatedButton.styleFrom(
-        //                     foregroundColor: Colors.purpleAccent,
-        //                     backgroundColor: Colors.white,
-        //                     // foreground
-        //                   ),
-        //                   child: const Align(
-        //                     alignment: Alignment.center,
-        //                     child: Text(
-        //                       "TXT",
-        //                       style: TextStyle(
-        //                         fontSize: 20,
-        //                         letterSpacing: 3,
-        //                         color: Colors.black,
-        //                       ),
-        //                     ),
-        //                   ),
-        //                 ),
-        //                 height: 30,
-        //                 width: 230,
-        //               ),
-        //               SizedBox(
-        //                 height: 50,
-        //               ),
-        //             ],
-        //           ),
-        //         ],
-        //       ),
-        //     ],
-        //   ),
-        // ),
       ),
     );
   }

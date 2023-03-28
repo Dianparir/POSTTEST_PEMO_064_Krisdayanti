@@ -29,13 +29,18 @@ class _MyAccountState extends State<MyAccount> {
     var heightScreen = MediaQuery.of(context).size.height; //MediaQuery
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Colors.pinkAccent,
+          centerTitle: true,
+          title: const Text('Sign In'),
+        ),
         body: Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
             child: ListView(
               children: [
-                new Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
@@ -45,7 +50,7 @@ class _MyAccountState extends State<MyAccount> {
                       child: TextFormField(
                         autofocus: true,
                         controller: name,
-                        decoration: new InputDecoration(
+                        decoration: InputDecoration(
                           hintText: "Input Your Name",
                           labelText: "Name",
                           icon: Icon(Icons.person_outline),
@@ -71,15 +76,15 @@ class _MyAccountState extends State<MyAccount> {
                     ),
                   ],
                 ),
-                new Column(
+                Column(
                   children: [
                     //Radio buttons
                     const SizedBox(
                       height: 30,
                     ),
-                    Text("Who are you?"),
+                    const Text("Who are you?"),
                     ListTile(
-                      title: Text("Fangirl"),
+                      title: const Text("Fangirl"),
                       leading: Radio(
                         value: Status.fangirl,
                         groupValue: status,
@@ -91,7 +96,7 @@ class _MyAccountState extends State<MyAccount> {
                       ),
                     ),
                     ListTile(
-                      title: Text("Fanboy"),
+                      title: const Text("Fanboy"),
                       leading: Radio(
                         value: Status.fanboy,
                         groupValue: status,
@@ -107,7 +112,7 @@ class _MyAccountState extends State<MyAccount> {
                     ),
                     //Checkbox
                     ListTile(
-                      title: Text("Are you sure want to be a K-Pop fan?"),
+                      title: const Text("Are you sure want to be a K-Pop fan?"),
                       leading: Checkbox(
                           value: fandom,
                           onChanged: (bool? value) {
@@ -117,7 +122,7 @@ class _MyAccountState extends State<MyAccount> {
                           }),
                     ),
                     IconButton(
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.home,
                       ),
                       iconSize: 25,
