@@ -9,7 +9,10 @@ class LandingPage extends StatelessWidget {
     var heightScreen = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      body: Center(
+      body: Container(
+        alignment: Alignment.center,
+        height: heightScreen,
+        width: widthScreen,
         child: ListView(
           children: [
             Stack(
@@ -33,7 +36,7 @@ class LandingPage extends StatelessWidget {
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
                       foregroundColor: Colors.white,
-                      backgroundColor: Colors.purpleAccent,
+                      backgroundColor: Colors.pinkAccent,
                     ),
                     onPressed: () {
                       Navigator.pushNamed(context, '/homePage');

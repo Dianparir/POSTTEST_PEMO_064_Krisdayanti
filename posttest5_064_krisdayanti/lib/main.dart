@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 
 //import file dart
 import 'landing_page.dart';
 import 'home_page.dart';
+import 'store_page.dart';
 import 'shopping_page.dart';
 import 'my_account.dart';
 
@@ -20,13 +22,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'posttest5_064_krisdayanti',
       theme: ThemeData(
-        primarySwatch: Colors.purple,
+        primarySwatch: Colors.pink,
       ),
       home: const HomePage(),
       initialRoute: '/homePage',
       routes: {
         '/landingPage': (context) => const LandingPage(),
         '/homePage': (context) => const HomePage(),
+        '/storePage': (context) => const StorePage(),
         '/shoppingPage': (context) => const ShoppingPage(),
         '/myAccount': (context) => const MyAccount(),
       },
