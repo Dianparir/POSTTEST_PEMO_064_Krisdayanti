@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:posttest6_064_krisdayanti/splash_screen.dart';
 
 //import file dart
+import 'splash_screen.dart';
 import 'landing_page.dart';
 import 'home_page.dart';
 import 'boyband.dart';
