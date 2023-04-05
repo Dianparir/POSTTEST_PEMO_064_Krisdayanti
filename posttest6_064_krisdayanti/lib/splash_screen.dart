@@ -44,14 +44,9 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              "assets/my_logo.png",
+              "assets/my-logo.png",
               height: tinggi / 2,
               width: lebar / 2,
-            ),
-            Text(
-              "Welcome to Merchandise K-Pop Store",
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.displayMedium,
             ),
           ],
         ),

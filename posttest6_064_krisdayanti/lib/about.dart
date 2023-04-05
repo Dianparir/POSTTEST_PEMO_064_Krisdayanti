@@ -12,7 +12,10 @@ class aboutPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text('About'),
+        title: Text(
+          'About',
+          style: Theme.of(context).textTheme.displaySmall,
+        ),
       ),
       body: Container(
         alignment: Alignment.center,
@@ -22,10 +25,31 @@ class aboutPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text('K-Pop Merchandise Shop', textAlign: TextAlign.center),
-            const Text('By', textAlign: TextAlign.center),
-            const Text('2009106064', textAlign: TextAlign.center),
-            const Text('Krisdayanti', textAlign: TextAlign.center),
+            Image.asset(
+              "assets/my-logo.png",
+              scale: 2,
+            ),
+            const SizedBox(height: 50),
+            Text(
+              'K-Pop Merchandise Shop',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              'By',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              '2009106064',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
+            Text(
+              'Krisdayanti',
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyMedium,
+            ),
           ],
         ),
       ),

@@ -17,28 +17,28 @@ class _AespaPageState extends State<AespaPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'aespa',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "aespa",
             child: Container(
               alignment: Alignment.topCenter,
-              margin: const EdgeInsets.all(20),
               width: widthScreen,
               child: Image.asset(
                 'assets/aespa.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
@@ -50,7 +50,6 @@ class _AespaPageState extends State<AespaPage> {
                 crossAxisSpacing: 10,
                 children: [
                   Container(
-                    margin: const EdgeInsets.only(left: 20, top: 10, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -65,7 +64,6 @@ class _AespaPageState extends State<AespaPage> {
                     ),
                   ),
                   Container(
-                    margin: const EdgeInsets.only(left: 10, top: 10, right: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -104,28 +102,28 @@ class _BlackpinkPageState extends State<BlackpinkPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'Blackpink',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "blackpink",
             child: Container(
               alignment: Alignment.topCenter,
-              margin: const EdgeInsets.all(20),
               width: widthScreen,
               child: Image.asset(
                 'assets/blackpink.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
@@ -139,7 +137,6 @@ class _BlackpinkPageState extends State<BlackpinkPage> {
                   Container(
                     height: 170,
                     width: 230,
-                    margin: const EdgeInsets.only(left: 10, top: 20, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -156,7 +153,6 @@ class _BlackpinkPageState extends State<BlackpinkPage> {
                   Container(
                     height: 170,
                     width: 230,
-                    margin: const EdgeInsets.only(left: 10, top: 20, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -195,28 +191,28 @@ class _RedVelvetPageState extends State<RedVelvetPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'Red Velvet',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "red velvet",
             child: Container(
               alignment: Alignment.topCenter,
-              margin: const EdgeInsets.all(20),
               width: widthScreen,
               child: Image.asset(
                 'assets/red-velvet.png',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
@@ -230,7 +226,6 @@ class _RedVelvetPageState extends State<RedVelvetPage> {
                   Container(
                     height: 170,
                     width: 230,
-                    margin: const EdgeInsets.only(left: 10, top: 20, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -247,7 +242,6 @@ class _RedVelvetPageState extends State<RedVelvetPage> {
                   Container(
                     height: 170,
                     width: 230,
-                    margin: const EdgeInsets.only(left: 10, top: 20, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(

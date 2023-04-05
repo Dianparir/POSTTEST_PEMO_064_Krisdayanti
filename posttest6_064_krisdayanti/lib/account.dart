@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'home_page.dart';
 
 class MyAccount extends StatefulWidget {
   const MyAccount({super.key});
@@ -32,30 +31,37 @@ class _MyAccountState extends State<MyAccount> {
         appBar: AppBar(
           backgroundColor: Colors.pinkAccent,
           centerTitle: true,
-          title: const Text('Sign In'),
+          title: Text(
+            'Sign In',
+            style: Theme.of(context).textTheme.displaySmall,
+          ),
         ),
         body: Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
+            padding: const EdgeInsets.all(25),
             child: ListView(
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      margin: EdgeInsets.all(20),
+                      margin: const EdgeInsets.all(20),
                       width: 220,
                       height: 50,
                       child: TextFormField(
                         autofocus: true,
                         controller: name,
+                        style: Theme.of(context).textTheme.bodyMedium,
                         decoration: InputDecoration(
                           hintText: "Input Your Name",
+                          hintStyle: Theme.of(context).textTheme.bodySmall,
                           labelText: "Name",
-                          icon: Icon(Icons.person_outline),
+                          labelStyle: Theme.of(context).textTheme.bodySmall,
+                          icon: const Icon(Icons.person_outline),
                           border: OutlineInputBorder(
-                            borderRadius: new BorderRadius.circular(5),
+                            borderRadius: BorderRadius.circular(5),
                           ),
                         ),
                       ),
@@ -66,7 +72,10 @@ class _MyAccountState extends State<MyAccount> {
                           context: context,
                           builder: (context) {
                             return AlertDialog(
-                              content: Text(name.text),
+                              content: Text(
+                                name.text,
+                                style: Theme.of(context).textTheme.bodyMedium,
+                              ),
                             );
                           },
                         );
@@ -82,9 +91,15 @@ class _MyAccountState extends State<MyAccount> {
                     const SizedBox(
                       height: 30,
                     ),
-                    const Text("Who are you?"),
+                    Text(
+                      "Who are you?",
+                      style: Theme.of(context).textTheme.bodyMedium,
+                    ),
                     ListTile(
-                      title: const Text("Fangirl"),
+                      title: Text(
+                        "Fangirl",
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                       leading: Radio(
                         value: Status.fangirl,
                         groupValue: status,
@@ -96,7 +111,10 @@ class _MyAccountState extends State<MyAccount> {
                       ),
                     ),
                     ListTile(
-                      title: const Text("Fanboy"),
+                      title: Text(
+                        "Fanboy",
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                       leading: Radio(
                         value: Status.fanboy,
                         groupValue: status,
@@ -112,7 +130,10 @@ class _MyAccountState extends State<MyAccount> {
                     ),
                     //Checkbox
                     ListTile(
-                      title: const Text("Are you sure want to be a K-Pop fan?"),
+                      title: Text(
+                        "Are you sure want to be a K-Pop fan?",
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                       leading: Checkbox(
                           value: fandom,
                           onChanged: (bool? value) {

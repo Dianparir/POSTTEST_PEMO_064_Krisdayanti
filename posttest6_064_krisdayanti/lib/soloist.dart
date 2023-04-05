@@ -17,28 +17,28 @@ class _IUPageState extends State<IUPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'IU',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "iu",
             child: Container(
               alignment: Alignment.topCenter,
-              margin: EdgeInsets.all(20),
               width: widthScreen,
               child: Image.asset(
                 'assets/iu.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
@@ -50,7 +50,6 @@ class _IUPageState extends State<IUPage> {
                 crossAxisSpacing: 10,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 20, top: 10, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -65,7 +64,6 @@ class _IUPageState extends State<IUPage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 10, top: 10, right: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -104,28 +102,28 @@ class _SomiPageState extends State<SomiPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'SOMI',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "somi",
             child: Container(
               alignment: Alignment.topCenter,
-              margin: EdgeInsets.all(20),
               width: widthScreen,
               child: Image.asset(
                 'assets/somi.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
@@ -137,7 +135,6 @@ class _SomiPageState extends State<SomiPage> {
                 crossAxisSpacing: 10,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 20, top: 10, right: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(
@@ -152,7 +149,6 @@ class _SomiPageState extends State<SomiPage> {
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 10, top: 10, right: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       image: const DecorationImage(

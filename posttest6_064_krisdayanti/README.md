@@ -1,5 +1,11 @@
 # posttest6_064_krisdayanti
 
+## Tema : K-Pop Merchandise Shop
+
+### Nama : Krisdayanti
+### NIM : 2009106064
+### Kelas : A1 Pemrograman Mobile
+
 A new Flutter project.
 
 ## Getting Started

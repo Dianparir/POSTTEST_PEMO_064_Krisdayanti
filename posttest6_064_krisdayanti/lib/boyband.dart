@@ -17,33 +17,32 @@ class _BangtanPageState extends State<BangtanPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'BTS',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "bts",
             child: Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(25),
               width: widthScreen / 2,
               child: Image.asset(
                 'assets/bts.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
-            padding: const EdgeInsets.all(25),
             child: GridView.count(
                 crossAxisCount: 3,
                 childAspectRatio: 4 / 4,
@@ -123,33 +122,32 @@ class _EnhypenPageState extends State<EnhypenPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'ENHYPEN',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "enhypen",
             child: Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(25),
               width: widthScreen,
               child: Image.asset(
                 'assets/enhypen.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
-            padding: const EdgeInsets.all(25),
             child: GridView.count(
                 crossAxisCount: 3,
                 childAspectRatio: 4 / 3,
@@ -213,33 +211,32 @@ class _ExoPageState extends State<ExoPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'EXO',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "exo",
             child: Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(25),
               width: widthScreen,
               child: Image.asset(
                 'assets/exo.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
-            padding: const EdgeInsets.all(25),
             child: GridView.count(
                 crossAxisCount: 3,
                 childAspectRatio: 4 / 3,
@@ -303,33 +300,32 @@ class _NctIlichilPageState extends State<NctIlichilPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'NCT 127',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "nct 127",
             child: Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(25),
               width: widthScreen,
               child: Image.asset(
                 'assets/nct-127.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
-            padding: const EdgeInsets.all(25),
             child: GridView.count(
                 crossAxisCount: 3,
                 childAspectRatio: 4 / 3,
@@ -393,33 +389,32 @@ class _NctDreamPageState extends State<NctDreamPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'NCT Dream',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "nct dream",
             child: Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(25),
               width: widthScreen,
               child: Image.asset(
                 'assets/nct-dream.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
-            padding: const EdgeInsets.all(25),
             child: GridView.count(
                 crossAxisCount: 3,
                 childAspectRatio: 4 / 3,
@@ -483,33 +478,32 @@ class _TxtPageState extends State<TxtPage> {
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
         centerTitle: true,
-        title: const Text(
+        title: Text(
           'TXT',
-          style: TextStyle(
-              fontSize: 20, fontWeight: FontWeight.bold, letterSpacing: 5),
+          style: Theme.of(context).textTheme.displaySmall,
         ),
       ),
       body: Container(
         alignment: Alignment.center,
         height: heightScreen,
         width: widthScreen,
+        padding: const EdgeInsets.all(30),
         child: ListView(children: [
           Hero(
             tag: "txt",
             child: Container(
               alignment: Alignment.topCenter,
-              padding: const EdgeInsets.all(25),
               width: widthScreen,
               child: Image.asset(
                 'assets/txt.jpg',
               ),
             ),
           ),
+          const SizedBox(height: 30),
           Container(
             alignment: Alignment.center,
             height: heightScreen,
             width: widthScreen,
-            padding: const EdgeInsets.all(25),
             child: GridView.count(
                 crossAxisCount: 3,
                 childAspectRatio: 4 / 3,
