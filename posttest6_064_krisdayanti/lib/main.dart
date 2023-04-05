@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
           bodySmall: TextStyle(fontSize: 13, color: Colors.white),
         )),
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const SplashScreen(),
       initialRoute: '/splashscreen',
       routes: {
