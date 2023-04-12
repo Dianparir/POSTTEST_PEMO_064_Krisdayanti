@@ -74,7 +74,7 @@ class MyApp extends StatelessWidget {
               TextStyle(fontSize: 13, color: Colors.white, letterSpacing: 1),
         )),
       ),
-      themeMode: ThemeMode.light,
+      themeMode: ThemeMode.system,
       home: const SplashScreen(),
       initialRoute: '/splashscreen',
       routes: {
